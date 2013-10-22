@@ -1,0 +1,39 @@
+# Project: grader
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = obj/grader.o obj/evaluate.o obj/db_interface.o obj/execute.o $(RES)
+LINKOBJ  = obj/grader.o obj/evaluate.o obj/db_interface.o obj/execute.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -lmysql -lpsapi  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ../grader.exe
+CXXFLAGS = $(CXXINCS) -DON_WINDOWS   -g3
+CFLAGS = $(INCS) -DON_WINDOWS   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../grader.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "..\grader.exe" $(LIBS)
+
+obj/grader.o: grader.cpp
+	$(CPP) -c grader.cpp -o obj/grader.o $(CXXFLAGS)
+
+obj/evaluate.o: evaluate.cpp
+	$(CPP) -c evaluate.cpp -o obj/evaluate.o $(CXXFLAGS)
+
+obj/db_interface.o: db_interface.cpp
+	$(CPP) -c db_interface.cpp -o obj/db_interface.o $(CXXFLAGS)
+
+obj/execute.o: execute.c
+	$(CPP) -c execute.c -o obj/execute.o $(CXXFLAGS)

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="db_interface.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="4454" topLine="154" />
+	</File>
+	<File name="db_interface.h" open="1" top="0" tabpos="5">
+		<Cursor position="351" topLine="11" />
+	</File>
+	<File name="evaluate.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="7214" topLine="280" />
+	</File>
+	<File name="evaluate.h" open="1" top="1" tabpos="6">
+		<Cursor position="769" topLine="30" />
+	</File>
+	<File name="execute.c" open="1" top="0" tabpos="3">
+		<Cursor position="3410" topLine="119" />
+	</File>
+	<File name="execute.h" open="1" top="0" tabpos="7">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="grader.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="3021" topLine="114" />
+	</File>
+</CodeBlocks_layout_file>

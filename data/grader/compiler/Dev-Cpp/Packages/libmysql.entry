@@ -1,0 +1,41 @@
+[Setup]
+AppName=libmysql
+AppVersion=5.0.5
+Description=C MySQL client dynamic library. Link the library by -lmysql parameter.
+Url=http://www.mysql.org/
+
+[Files]
+bin\libmysql.dll
+include\mysql\config-netware.h
+include\mysql\config-os2.h
+include\mysql\config-win.h
+include\mysql\errmsg.h
+include\mysql\mysql.h
+include\mysql\mysqld_ername.h
+include\mysql\mysqld_error.h
+include\mysql\mysql_com.h
+include\mysql\mysql_embed.h
+include\mysql\mysql_time.h
+include\mysql\mysql_version.h
+include\mysql\my_alloc.h
+include\mysql\my_dbug.h
+include\mysql\my_getopt.h
+include\mysql\my_global.h
+include\mysql\my_list.h
+include\mysql\my_pthread.h
+include\mysql\my_sys.h
+include\mysql\m_ctype.h
+include\mysql\m_string.h
+include\mysql\raid.h
+include\mysql\typelib.h
+lib\libmysql.a
+lib\LIBMYSQL.def
+examples\libmysql\mysql.cpp
+examples\libmysql\mysql.dev
+docs\libmysql\Exceptions client.txt
+docs\libmysql\License.txt
+docs\libmysql\manual.chm
+C:\Users\storm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Bloodshed Dev-C++\libmysql\Documentation (online).url
+C:\Users\storm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Bloodshed Dev-C++\libmysql\Documentation.lnk
+C:\Users\storm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Bloodshed Dev-C++\libmysql\License.lnk
+C:\Users\storm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Bloodshed Dev-C++\libmysql\Exceptions client.lnk

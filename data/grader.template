@@ -1,0 +1,24 @@
+username: <<<MYSQL_USER>>>
+password: <<<MYSQL_PASS>>>
+
+#ip: 172.8.8.8
+
+os: windows
+host_index: windows-storm
+
+#ev_dir: ev\
+
+compiler: 1
+compiler-name: windows-devc
+compiler-c-cmd: cmd.exe /c "compiler\dev-cpp\gcc" -x c -o %s.exe %s.c 2> compile.msg
+compiler-cpp-cmd: cmd.exe /c "compiler\dev-cpp\g++" -x c++ -o %s.exe %s.c 2> compile.msg
+
+compiler: 2
+compiler-name: windows-codeblock
+compiler-c-cmd: cmd.exe /c ..\compiler\MinGW\bin\gcc -x c -o %s.exe %s.c 2> compile.msg
+compiler-cpp-cmd: cmd.exe /c ..\compiler\MinGW\bin\g++ -x c++ -o %s.exe %s.c 2> compile.msg
+
+compiler: 3
+compiler-name: linux
+compiler-c-cmd: cmd.exe /c "compiler\mingw\gcc" -x c -o %s.exe %s.c 2> compile.msg
+compiler-cpp-cmd: cmd.exe /c "compiler\mingw\g++" -x c++ -o %s.exe %s.c 2> compile.msg
