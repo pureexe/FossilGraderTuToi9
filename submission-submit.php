@@ -124,6 +124,17 @@ function savesubmission($id, $probid, $filename, $extension)
 
 	return $msg;
 }
+function checkshellhack($file){
+	$err_line = 1;
+	$f = fopen($file,"r");
+	while($lines = fgets($f)){
+		$disable_command = array("system(","ifstream","ofstream","fprintf(","fscanf(","fread(","fwrite(");
+		foreach($disable_command as &$disable_cmd)
+			if(strpos($lines,$disable_cmd)) return $err_line;
+		++$err_line;
+	}
+	return 0;
+}
 function processsubmission()
 {
 	global $subj_info;
@@ -134,11 +145,13 @@ function processsubmission()
 	$fsize     = $_FILES['code']['size'];
 	$fcode	   = $_FILES['code']['tmp_name'];
 	$extension = strtoupper(pathinfo($_FILES['code']['name'], PATHINFO_EXTENSION));
+	$check_shellhack = checkshellhack($fcode);
 	
 		 if( $subj_info['submit']=='OFF' )
 							 echo "<script>window.top.window.recieve('Grader close can not submit file.','$user_id','$prob_id');</script>";
 	else if( $fsize==0     ) echo '<script>window.top.window.recieve("File is empty, please choose file again.", "'.$user_id.'","'.$prob_id.'");</script>';
 	else if( $fsize>100000 ) echo '<script>window.top.window.recieve("File too large, please choose file again.", "'.$user_id.'","'.$prob_id.'");</script>';
+	else if( $check_shellhack!= 0 ) echo '<script>window.top.window.recieve("Unusable function at line '.$check_shellhack.'<br> Don\'t call system or file because it can take a server damage!", "'.$user_id.'","'.$prob_id.'");</script>';
 	else{
 		$res = savesubmission($user_id, $prob_id, $fcode, $extension);
 		echo '<script>window.top.window.recieve("'.$res.'", "'.$user_id.'","'.$prob_id.'");</script>';
